@@ -14,7 +14,7 @@ void test1(int x1, int x2){
 from z3 import *
 x1 = Int('x1')
 x2 = Int('x2')
-solve(x1 > x2, x1 >= 10, (2 * x1 + x2) == 40, (x1 - x2) == 5)
+solve(x1 > x2, x1 >= 10, (2 * x1 + x2) == 40, (x1 - x2) == 5)  #===> (15, 10)
 
 from cffi import *
 ffi = FFI()
