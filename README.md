@@ -3,6 +3,6 @@
 ## 第一个版本(python版本+cffi)
 ![](doc/opencpptest_0.1.PNG)
 
-## 第二个版本(python版本+libclang+gtest测试框架+opencppcoverage覆盖率工具)CSA
+## 第二个版本(python版本+libclang+gtest测试框架+opencppcoverage覆盖率工具)
 
-## 第三个版本(clang静态分析器+checker)
+## 第三个版本(Clang静态分析器Checker+gtest/gmock测试框架+opencppcoverage覆盖率工具)
