@@ -45,8 +45,10 @@ tu = index.parse(path)
 template_include = r'#include "gtest/gtest.h"'
 template_decls = r''
 template_tests = """TEST({0}, {1}){
-    {{2}({3}, {4});
-}"""
+    {2}({3}, {4});
+}
+
+"""
 funname, template_decls = dumpnode(tu.cursor, 0)
 
 
