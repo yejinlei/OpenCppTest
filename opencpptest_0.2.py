@@ -2,6 +2,7 @@
 """
 windows 64bit， python2.7 32bit
 """
+
 """test1.c样本
 #include<stdio.h>
 void test1(int x1, int x2){
@@ -44,7 +45,7 @@ tu = index.parse(path)
 template_include = '#include "gtest/gtest.h"\n\n'
 template_decls = ''
 template_tests ="""TEST(%s, %s){
-    %s(%s
+    %s(%s, %s);
 }
 
 """
@@ -53,6 +54,6 @@ def write_unittest():
     with open(os.path.join(os.path.join(os.getcwd(), 'unittest'), 'test_{}.c'.format('test')), 'w+') as f:
         f.write(template_include+template_decls+';\n')
         for num, para in enumerate(inputs):
-            f.write(template_tests % (funname.upper(), str(num), funname, str(para[0]), str(para[1])))
+            f.write(template_tests % (funname.upper(), str(num), funname, para[x1], para[x2]))
 
 write_unittest()
