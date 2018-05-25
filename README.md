@@ -7,5 +7,8 @@
 ![](doc/opencpptest_0.2_1.PNG)
 ![](doc/opencpptest_0.2_2.PNG)
 ![](doc/opencpptest_0.2_3.PNG)
+![](doc/opencpptest_0.2_4.PNG)
+![](doc/opencpptest_0.2_5.PNG)
+![](doc/opencpptest_0.2_6.PNG)
 
 ## 第三个版本(Clang静态分析器Checker+z3约束器+gtest/gmock测试框架+opencppcoverage覆盖率工具)

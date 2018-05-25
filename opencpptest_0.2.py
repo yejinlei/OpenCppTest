@@ -43,16 +43,27 @@ path = os.path.join(os.getcwd(), r'test1.c')
 tu = index.parse(path)
 
 template_include = '#include "gtest/gtest.h"\n\n'
-template_decls = ''
+template_decls = """
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+    %s;
+
+#ifdef __cplusplus
+}
+#endif
+"""
+
 template_tests ="""TEST(%s, %s){
     %s(%s, %s);
 }
 
 """
-funname, template_decls = dumpnode(tu.cursor, 0)
+funname, decls = dumpnode(tu.cursor, 0)
 def write_unittest():
-    with open(os.path.join(os.path.join(os.getcwd(), 'unittest'), 'test_{}.c'.format('test')), 'w+') as f:
-        f.write(template_include+template_decls+';\n')
+    with open(os.path.join(os.path.join(os.getcwd(), 'unittest'), 'test_{}.cc'.format('test')), 'w+') as f:
+        f.write(template_include+template_decls % (decls)+';\n')
         for num, para in enumerate(inputs):
             f.write(template_tests % (funname.upper(), str(num), funname, para[x1], para[x2]))
 
